@@ -75,7 +75,7 @@
     pkgs.zsh
   ];
 
-  # config files (vim, zsh, starship, direnv, git, aws)
+  # config files (vim, zsh, starship, direnv, aws)
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -92,6 +92,7 @@
     # '';
 
     ".gitconfig".source = ./gitconfig;
+    ".config/starship.toml".source = ./starship.toml;
   };
 
   # You can also manage environment variables but you will have to manually
