@@ -34,7 +34,48 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+
+    # TODO:
+    # steam?
+    # docker?
+    # spotify
+    # zulip
+    # firefox
+    # vim plugins?
+    pkgs.awscli2
+    pkgs.bat
+    pkgs.cmake
+    pkgs.deadbeef
+    pkgs.direnv
+    pkgs.dmenu
+    pkgs.eva
+    pkgs.evince
+    pkgs.exa
+    pkgs.fd
+    pkgs.feh # image viewer
+    pkgs.flameshot # screenshots
+    pkgs.fzf
+    pkgs.git
+    pkgs.git-lfs
+    pkgs.gf # gdb frontend
+    pkgs.htop
+    pkgs.just
+    pkgs.jq
+    pkgs.neovim
+    pkgs.polybar
+    pkgs.redshift
+    pkgs.ripgrep
+    pkgs.starship
+    pkgs.unzip
+    pkgs.watchexec
+    pkgs.xcp
+    pkgs.xsv
+    pkgs.zsh-nix-shell # needed?
+    pkgs.zip
+    pkgs.zsh
   ];
+
+  # config files (vim, zsh, starship, direnv, git, aws)
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
