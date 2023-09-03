@@ -42,6 +42,7 @@
     # zulip
     # firefox
     # vim plugins?
+    pkgs.asciinema
     pkgs.awscli2
     pkgs.bat
     pkgs.cmake
@@ -75,8 +76,6 @@
     pkgs.zsh
   ];
 
-  # config files (vim, zsh, starship, direnv, aws)
-
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
@@ -91,6 +90,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
+    # todo (vim, zsh, direnv, aws, kitty, i3)
     ".gitconfig".source = ./gitconfig;
     ".config/starship.toml".source = ./starship.toml;
   };
