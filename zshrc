@@ -132,3 +132,7 @@ if [ -e /home/hwchen/.nix-profile/etc/profile.d/nix.sh ]; then . /home/hwchen/.n
 
 # redshift
 alias redshift-loc='redshift -l 42:-71'
+
+# keychain
+keychain id_rsa
+. ~/.keychain/`uname -n`-sh

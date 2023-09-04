@@ -1,4 +1,5 @@
 # Need to install pragmata pro font manually
+# Inkdrop also manual
 # For nvim, will need to :PlugInstall
 # Get started: run `nix run . switch` to install home-manager, then `home-manager switch` to run this config
 # Some resources:
@@ -93,6 +94,13 @@
       enable = true;
       enableZshIntegration = true;
       nix-direnv.enable = true;
+    };
+    keychain = {
+      # for managing ssh keys
+      enable = true;
+      # enableZshIntegration = true;
+      # agents = ["ssh"];
+      # keys = ["id_rsa"];
     };
 
     zsh.enable = true; # manage shell here
