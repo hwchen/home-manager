@@ -45,7 +45,6 @@
     pkgs.bat
     pkgs.cmake
     pkgs.deadbeef
-    pkgs.direnv
     pkgs.dmenu
     pkgs.eva
     pkgs.evince
@@ -75,9 +74,18 @@
     pkgs.yt-dlp # youtube download
     pkgs.zsh-nix-shell # needed?
     pkgs.zip
-    pkgs.zsh
     pkgs.zulip
   ];
+
+  programs = {
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
+
+    zsh.enable = true; # manage shell here
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -93,9 +101,10 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
-    # todo (vim, zsh, direnv, aws, i3)
+    # todo (aws?, i3)
     # todo symlink some configs? https://github.com/virchau13/dots/blob/9eec548da8e72c5f2b41cdeb40e983dcc91aefd1/apps/nvim/default.nix
     ".gitconfig".source = ./gitconfig;
+    ".zshrc".source = ./zshrc;
     ".config/starship.toml".source = ./starship.toml;
     ".config/kitty/kitty.conf".source = ./kitty/kitty.conf;
     ".config/kitty/theme.conf".source = ./kitty/theme.conf;
