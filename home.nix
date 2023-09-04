@@ -10,6 +10,7 @@
 # https://github.com/virchau13/dots/blob/9eec548da8e72c5f2b41cdeb40e983dcc91aefd1/apps/nvim/default.nix
 # https://github.com/the-nix-way/nome/blob/main/home-manager/neovim.nix
 # https://github.com/YorikSar/dotfiles/blob/master/nix/neovim.nix
+# TODO: why does zulip have small cursor?
 
 { config, pkgs, ... }:
 
