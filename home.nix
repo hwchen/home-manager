@@ -101,7 +101,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
-    # todo (aws?, i3)
+    # todo (aws?)
     # todo symlink some configs? https://github.com/virchau13/dots/blob/9eec548da8e72c5f2b41cdeb40e983dcc91aefd1/apps/nvim/default.nix
     ".gitconfig".source = ./gitconfig;
     ".zshrc".source = ./zshrc;
@@ -112,6 +112,7 @@
     ".config/i3/config".source = ./i3/config;
     ".config/polybar/launch.sh".source = ./polybar/launch.sh;
     ".config/polybar/config.ini".source = ./polybar/config.ini;
+    ".aws/config".source = ./aws/config;
   };
 
   # You can also manage environment variables but you will have to manually
