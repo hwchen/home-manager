@@ -62,7 +62,7 @@
     pkgs.htop
     pkgs.just
     pkgs.jq
-    pkgs.kitty
+    # pkgs.kitty broken https://github.com/NixOS/nixpkgs/issues/80936
     pkgs.neovim
     pkgs.polybar
     pkgs.redshift
