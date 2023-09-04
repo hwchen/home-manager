@@ -109,6 +109,9 @@
     ".config/kitty/kitty.conf".source = ./kitty/kitty.conf;
     ".config/kitty/theme.conf".source = ./kitty/theme.conf;
     ".config/nvim/init.vim".source = ./nvim/init.vim;
+    ".config/i3/config".source = ./i3/config;
+    ".config/polybar/launch.sh".source = ./polybar/launch.sh;
+    ".config/polybar/config.ini".source = ./polybar/config.ini;
   };
 
   # You can also manage environment variables but you will have to manually
