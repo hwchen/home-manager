@@ -39,7 +39,6 @@
     # steam?
     # docker?
     # spotify? (non-free)
-    # nvim
     # vim plugins?
     pkgs.asciinema
     pkgs.awscli2
@@ -95,10 +94,12 @@
     # '';
 
     # todo (vim, zsh, direnv, aws, i3)
+    # todo symlink some configs? https://github.com/virchau13/dots/blob/9eec548da8e72c5f2b41cdeb40e983dcc91aefd1/apps/nvim/default.nix
     ".gitconfig".source = ./gitconfig;
     ".config/starship.toml".source = ./starship.toml;
     ".config/kitty/kitty.conf".source = ./kitty/kitty.conf;
     ".config/kitty/theme.conf".source = ./kitty/theme.conf;
+    ".config/nvim/init.vim".source = ./nvim/init.vim;
   };
 
   # You can also manage environment variables but you will have to manually
