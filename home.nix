@@ -62,6 +62,7 @@
     pkgs.htop
     pkgs.just
     pkgs.jq
+    pkgs.kitty
     pkgs.neovim
     pkgs.polybar
     pkgs.redshift
@@ -94,6 +95,8 @@
     # todo (vim, zsh, direnv, aws, kitty, i3)
     ".gitconfig".source = ./gitconfig;
     ".config/starship.toml".source = ./starship.toml;
+    ".config/kitty/kitty.conf".source = ./kitty/kitty.conf;
+    ".config/kitty/theme.conf".source = ./kitty/theme.conf;
   };
 
   # You can also manage environment variables but you will have to manually
