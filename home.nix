@@ -1,4 +1,5 @@
 # Need to install pragmata pro font manually
+# For nvim, will need to :PlugInstall
 # Get started: run `nix run . switch` to install home-manager, then `home-manager switch` to run this config
 # Some resources:
 # https://nix-community.github.io/home-manager/index.html
