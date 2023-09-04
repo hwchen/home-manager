@@ -38,9 +38,8 @@
     # TODO:
     # steam?
     # docker?
-    # spotify
-    # zulip
     # firefox
+    # nvim
     # vim plugins?
     pkgs.asciinema
     pkgs.awscli2
@@ -58,6 +57,7 @@
     pkgs.fzf
     pkgs.git
     pkgs.git-lfs
+    pkgs.gitui
     pkgs.gf # gdb frontend
     pkgs.htop
     pkgs.just
@@ -67,6 +67,7 @@
     pkgs.polybar
     pkgs.redshift
     pkgs.ripgrep
+    pkgs.spotify
     pkgs.starship
     pkgs.unzip
     pkgs.watchexec
@@ -76,6 +77,7 @@
     pkgs.zsh-nix-shell # needed?
     pkgs.zip
     pkgs.zsh
+    pkgs.zulip
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -92,7 +94,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
-    # todo (vim, zsh, direnv, aws, kitty, i3)
+    # todo (vim, zsh, direnv, aws, i3)
     ".gitconfig".source = ./gitconfig;
     ".config/starship.toml".source = ./starship.toml;
     ".config/kitty/kitty.conf".source = ./kitty/kitty.conf;
