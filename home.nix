@@ -38,7 +38,7 @@
     # TODO:
     # steam?
     # docker?
-    # firefox
+    # spotify? (non-free)
     # nvim
     # vim plugins?
     pkgs.asciinema
@@ -53,6 +53,7 @@
     pkgs.exa
     pkgs.fd
     pkgs.feh # image viewer
+    # pkgs.firefox broken openfl
     pkgs.flameshot # screenshots
     pkgs.fzf
     pkgs.git
@@ -67,7 +68,6 @@
     pkgs.polybar
     pkgs.redshift
     pkgs.ripgrep
-    pkgs.spotify
     pkgs.starship
     pkgs.unzip
     pkgs.watchexec
