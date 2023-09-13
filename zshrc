@@ -136,3 +136,8 @@ alias redshift-loc='redshift -l 42:-71'
 # keychain
 keychain id_rsa
 . ~/.keychain/`uname -n`-sh
+
+# todoist
+todoist-project-id-by-name() { curl -s -X GET https://api.todoist.com/rest/v2/projects -H "Authorization: Bearer $TODOIST_API_TOKEN" | jq -r --arg PNAME "$1" '.[] | select(.name == $PNAME) | .id' }
+todoist-project-tasks-by-pid() { curl -s -X GET "https://api.todoist.com/rest/v2/tasks?project_id=$1" -H "Authorization: Bearer $TODOIST_API_TOKEN" | jq -r '.[].content'}
+todoist-task-list() { todoist-project-tasks-by-pid $(todoist-project-id-by-name "$1") }

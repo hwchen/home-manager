@@ -58,6 +58,7 @@
     pkgs.awscli2
     pkgs.bat
     pkgs.cmake
+    pkgs.curl
     pkgs.deadbeef
     pkgs.dmenu
     pkgs.eva
