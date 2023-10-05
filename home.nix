@@ -78,6 +78,7 @@
     pkgs.jq
     # pkgs.kitty broken https://github.com/NixOS/nixpkgs/issues/80936
     pkgs.neovim
+    pkgs.pyright
     pkgs.redshift
     pkgs.ripgrep
     pkgs.starship
