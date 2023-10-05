@@ -83,7 +83,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ciaranm/securemodelines'
 Plug 'phaazon/hop.nvim'
-Plug 'windwp/nvim-autopairs'
+"Plug 'windwp/nvim-autopairs'
 
 " Language support
 Plug 'pest-parser/pest.vim'
