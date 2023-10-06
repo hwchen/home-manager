@@ -50,6 +50,10 @@ export PATH=$HOME/bin:$PATH
 # For Rust
 export PATH=$HOME/.cargo/bin:$PATH
 
+# For doom emacs
+export PATH=$HOME/.config/emacs/bin:$PATH
+alias emacs='emacs -nw'
+
 #Aliases
 alias cat='bat -pp'
 alias blog='fd ~/projects/golang/src/github.com/hwchen/hwc'

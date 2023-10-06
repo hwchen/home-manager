@@ -61,6 +61,7 @@
     pkgs.curl
     pkgs.deadbeef
     pkgs.dmenu
+    pkgs.emacs29
     pkgs.eva
     pkgs.evince
     pkgs.exa
