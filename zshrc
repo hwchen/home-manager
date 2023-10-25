@@ -124,7 +124,7 @@ eval "$(direnv hook zsh)"
 
 # git recent branches
 # TODO make a real history of branch checkouts w/ fuzzy search
-alias bstack='f() { git reflog | grep checkout | grep -v rebase | cut -d " " -f 8 | zuniq - | head -${1} | cat -n };f'
+alias bstack='f() { git reflog | grep checkout | grep -v rebase | cut -d " " -f 8 | ouniq - | head -${1} | cat -n };f'
 alias bjmp='fn() { bstack ${1} | tail -1 | cut -f 2 | xargs git checkout  }; fn'
 alias bb="bjmp 2"
 
