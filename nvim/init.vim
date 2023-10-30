@@ -98,6 +98,7 @@ Plug 'NoahTheDuke/vim-just'
 Plug 'qnighy/lalrpop.vim',
 Plug 'vmchale/dhall-vim'
 Plug 'tetralux/odin.vim'
+Plug 'itspriddle/vim-shellcheck'
 
 " pyright installed from https://github.com/fannheyward/coc-pyright
 
@@ -491,6 +492,11 @@ lspconfig.pyright.setup{
 }
 
 lspconfig.ols.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+lspconfig.bashls.setup{
   on_attach = on_attach,
   capabilities = capabilities,
 }
