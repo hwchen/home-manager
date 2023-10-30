@@ -78,6 +78,7 @@
     pkgs.just
     pkgs.jq
     # pkgs.kitty broken https://github.com/NixOS/nixpkgs/issues/80936
+    pkgs.nodePackages.bash-language-server
     pkgs.neovim
     pkgs.pyright
     pkgs.redshift
