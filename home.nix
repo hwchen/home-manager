@@ -82,6 +82,7 @@
     pkgs.pyright
     pkgs.redshift
     pkgs.ripgrep
+    pkgs.shellcheck
     pkgs.starship
     pkgs.unzip
     pkgs.watchexec
