@@ -10,6 +10,7 @@ eval "$(starship init zsh)"
 # pavucontrol
 
 source ~/.nix-profile/share/zsh-nix-shell/nix-shell.plugin.zsh # still necessary?
+source ~/.local-keys
 
 setopt histignorealldups sharehistory
 
