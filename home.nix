@@ -54,6 +54,7 @@
     # docker?
     # spotify? (non-free)
     # vim plugins?
+    pkgs.aerc
     pkgs.asciinema
     pkgs.awscli2
     pkgs.bat
