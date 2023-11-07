@@ -94,6 +94,7 @@
     pkgs.zsh-nix-shell # needed?
     pkgs.zip
     pkgs.zulip
+    pkgs.zulip-term
   ];
 
   programs = {
