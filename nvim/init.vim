@@ -173,7 +173,7 @@ let g:lightline = {
     \ 'colorscheme': 'dayfox',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'readonly', 'filename', 'modified' ] ]
+    \             [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ]
     \ },
 \ }
 
@@ -263,6 +263,9 @@ set number         "show line numbers
 
 " force markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" roc
+autocmd BufNewFile,BufReadPost *.roc set filetype=roc
 
 " tabs for odin dev only
 " ** glob not working for some reason? Or is there some weird buffering going
@@ -514,6 +517,24 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   }
 )
 
+-- Roc
+-- manual lsp startup, example at https://dx13.co.uk/articles/2023/04/24/neovim-lsp-without-plugins/
+--local autocmd = vim.api.nvim_create_autocmd
+--autocmd("FileType", {
+--    pattern = "roc",
+--    callback = function()
+--        local root_dir = vim.fs.dirname(
+--            vim.fs.find({ 'main.roc', '.git' }, { upward = true })[1]
+--        )
+--        local client = vim.lsp.start({
+--            name = 'roc_ls',
+--            cmd = { 'roc_ls' },
+--            root_dir = root_dir,
+--        })
+--        vim.lsp.buf_attach_client(0, client)
+--    end
+--})
+
 -- Telescope
 
 local actions = require("telescope.actions")
@@ -546,6 +567,22 @@ require'nvim-treesitter.configs'.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
+
+-- treesitter for roc
+-- note that I also had to link the query files from ~/src/tree-sitter-roc/queries to ~/.config/nvim/queries/roc
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.roc = {
+  install_info = {
+    url = "~/src/tree-sitter-roc", -- local path or git repo
+    files = {"src/parser.c", "src/scanner.cc"}, -- note that some parsers also require src/scanner.c or src/scanner.cc
+    -- optional entries:
+    branch = "main", -- default branch in case of git repo if different from master
+    generate_requires_npm = false, -- if stand-alone parser without npm dependencies
+    requires_generate_from_grammar = false, -- if folder contains pre-generated src/parser.c
+  },
+  filetype = "roc", -- if filetype does not match the parser name
+}
+vim.treesitter.language.register('roc', 'roc')
 
 --require("nvim-autopairs").setup {}
 --
