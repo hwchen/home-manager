@@ -65,7 +65,7 @@
     pkgs.emacs29
     pkgs.eva
     pkgs.evince
-    pkgs.exa
+    pkgs.eza
     pkgs.fd
     pkgs.feh # image viewer
     # pkgs.firefox broken openfl
