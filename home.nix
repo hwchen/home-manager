@@ -97,7 +97,7 @@
     pkgs.zulip-term
 
     # work
-    pkgs.teleport_12
+    pkgs.teleport
   ];
 
   programs = {
