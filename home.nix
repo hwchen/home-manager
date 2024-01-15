@@ -56,7 +56,6 @@
     # vim plugins?
     pkgs.aerc
     pkgs.asciinema
-    pkgs.awscli2
     pkgs.bat
     pkgs.cmake
     pkgs.curl
@@ -149,7 +148,6 @@
     ".config/i3/config".source = ./i3/config;
     ".config/polybar/launch.sh".source = ./polybar/launch.sh;
     ".config/polybar/config.ini".source = ./polybar/config.ini;
-    ".aws/config".source = ./aws/config;
   };
 
   # You can also manage environment variables but you will have to manually
