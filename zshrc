@@ -55,6 +55,11 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.config/emacs/bin:$PATH
 alias emacs='emacs -nw'
 
+# for laptop brightness
+function brightness () {
+    echo $1 | sudo tee /sys/class/backlight/intel_backlight/brightness
+}
+
 #Aliases
 alias cat='bat -pp'
 alias blog='fd ~/projects/golang/src/github.com/hwchen/hwc'
