@@ -1,5 +1,6 @@
 format="""
 $nix_shell\
+$terraform\
 $directory\
 $git_branch\
 $git_state\
@@ -8,6 +9,10 @@ $character\
 """
 
 add_newline = false
+
+[terraform]
+format = '\[$symbol$workspace\]'
+symbol = '💠'
 
 [nix_shell]
 format = '$symbol'
