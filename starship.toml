@@ -16,7 +16,7 @@ symbol = '💠'
 
 [nix_shell]
 format = '$symbol'
-symbol = '❄️'
+symbol = 'λ'
 
 [character]
 #symbol = "❯"
