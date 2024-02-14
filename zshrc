@@ -151,3 +151,9 @@ keychain id_rsa
 todoist-project-id-by-name() { curl -s -X GET https://api.todoist.com/rest/v2/projects -H "Authorization: Bearer $TODOIST_API_TOKEN" | jq -r --arg PNAME "$1" '.[] | select(.name == $PNAME) | .id' }
 todoist-project-tasks-by-pid() { curl -s -X GET "https://api.todoist.com/rest/v2/tasks?project_id=$1" -H "Authorization: Bearer $TODOIST_API_TOKEN" | jq -r '.[].content'}
 todoist-task-list() { todoist-project-tasks-by-pid $(todoist-project-id-by-name "$1") }
+
+# If there's issues w/ lxd connectivity (because of docker) run:
+# https://documentation.ubuntu.com/lxd/en/latest/howto/network_bridge_firewalld/#prevent-connectivity-issues-with-lxd-and-docker
+# In future, try to make this persistent across boots
+# sudo iptables -I DOCKER-USER -i lxdbr0 -j ACCEPT
+# sudo iptables -I DOCKER-USER -o lxdbr0 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
