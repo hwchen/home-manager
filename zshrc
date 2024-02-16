@@ -157,3 +157,6 @@ todoist-task-list() { todoist-project-tasks-by-pid $(todoist-project-id-by-name 
 # In future, try to make this persistent across boots
 # sudo iptables -I DOCKER-USER -i lxdbr0 -j ACCEPT
 # sudo iptables -I DOCKER-USER -o lxdbr0 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+
+# Get addresses of containers using the lxc bridge network
+alias lxc-net-alloc="lxc network list-allocations lxdbr0 --format compact"
