@@ -152,11 +152,15 @@ todoist-project-id-by-name() { curl -s -X GET https://api.todoist.com/rest/v2/pr
 todoist-project-tasks-by-pid() { curl -s -X GET "https://api.todoist.com/rest/v2/tasks?project_id=$1" -H "Authorization: Bearer $TODOIST_API_TOKEN" | jq -r '.[].content'}
 todoist-task-list() { todoist-project-tasks-by-pid $(todoist-project-id-by-name "$1") }
 
-# If there's issues w/ lxd connectivity (because of docker) run:
+# If there's issues w/ lxd/incus connectivity (because of docker) run:
 # https://documentation.ubuntu.com/lxd/en/latest/howto/network_bridge_firewalld/#prevent-connectivity-issues-with-lxd-and-docker
 # In future, try to make this persistent across boots
-# sudo iptables -I DOCKER-USER -i lxdbr0 -j ACCEPT
-# sudo iptables -I DOCKER-USER -o lxdbr0 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+# sudo iptables -I DOCKER-USER -i incusbr0 -j ACCEPT
+# sudo iptables -I DOCKER-USER -o incusbr0 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 
 # Get addresses of containers using the lxc bridge network
-alias lxc-net-alloc="lxc network list-allocations lxdbr0 --format compact"
+alias incus-ls="incus list"
+
+# nixos containers need to launch with security nesting = true for now
+# https://discuss.linuxcontainers.org/t/nixos-images-broken-on-incus-running-on-ubuntu-with-kernel-6-5/18856/12
+# incus launch images:nixos/23.11 -c security.nesting=true
