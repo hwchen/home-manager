@@ -164,3 +164,6 @@ alias incus-ls="incus list"
 # nixos containers need to launch with security nesting = true for now
 # https://discuss.linuxcontainers.org/t/nixos-images-broken-on-incus-running-on-ubuntu-with-kernel-6-5/18856/12
 # incus launch images:nixos/23.11 -c security.nesting=true
+
+# for when not using kb
+alias kbcaps='setxkbmap -option "caps:swapescape"'
