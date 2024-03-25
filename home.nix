@@ -74,6 +74,7 @@
     pkgs.git-lfs
     pkgs.gitui
     pkgs.gf # gdb frontend
+    pkgs.gron
     pkgs.htop
     pkgs.jj
     pkgs.just
