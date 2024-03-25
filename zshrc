@@ -167,3 +167,4 @@ alias incus-ls="incus list"
 
 # for when not using kb
 alias kbcaps='setxkbmap -option "caps:swapescape"'
+alias ungron='gron -u'
