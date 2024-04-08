@@ -88,6 +88,7 @@
     pkgs.redshift
     pkgs.ripgrep
     pkgs.shellcheck
+    pkgs.simple-http-server
     pkgs.starship
     pkgs.unzip
     pkgs.watchexec
