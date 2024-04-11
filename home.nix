@@ -57,7 +57,6 @@
     pkgs.aerc
     pkgs.asciinema
     pkgs.bat
-    pkgs.cmake
     pkgs.curl
     pkgs.deadbeef
     pkgs.dive # for inspecting docker images
