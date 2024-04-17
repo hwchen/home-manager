@@ -172,5 +172,5 @@ alias incus-ls="incus list"
 # incus launch images:nixos/23.11 -c security.nesting=true
 
 # for when not using kb
-alias kbcaps='setxkbmap -option "caps:swapescape"'
+alias kbcaps='setxkbmap -option "caps:escape"'
 alias ungron='gron -u'
