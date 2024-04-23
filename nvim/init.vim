@@ -20,7 +20,7 @@ set updatetime=500
 set completeopt=menuone,noinsert,noselect
 
 set ruler
-set relativenumber
+"set relativenumber
 set number
 set signcolumn=yes
 
@@ -259,7 +259,6 @@ set expandtab      "insert spaces when hitting TABs
 set softtabstop=4  "insert/delete 4 spaces when hitting TAB/BACKSPACE
 set shiftround     "round indent to mulitple of 'shiftwidth'
 set autoindent     "align the new line indent with previous line
-set number         "show line numbers
 
 " force markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
