@@ -92,6 +92,7 @@
     pkgs.unzip
     pkgs.watchexec
     pkgs.xcp
+    pkgs.xplr
     pkgs.xsv
     pkgs.yt-dlp # youtube download
     pkgs.zsh-nix-shell # needed?

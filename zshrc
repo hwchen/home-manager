@@ -68,13 +68,13 @@ function brightness () {
 
 #Aliases
 alias cat='bat -pp'
-alias blog='fd ~/projects/golang/src/github.com/hwchen/hwc'
-alias web='fd ~/projects/golang/src/github.com/hwchen/hwchen.github.io'
+alias blog='cd ~/projects/golang/src/github.com/hwchen/hwc'
+alias web='cd ~/projects/golang/src/github.com/hwchen/hwchen.github.io'
 alias ag='rg'
 alias rr="reddit-focus"
-alias find='~/.cargo/bin/fd'
+alias find='fd'
 #alias tygem="wine .wine/drive_c/Program\ Files\ \(x86\)/TygemGlobal/TygemGlobal.exe &"
-alias liz="fd ~/src/lizzie && java -jar 'target/lizzie-0.6-shaded.jar'"
+alias liz="cd ~/src/lizzie && java -jar 'target/lizzie-0.6-shaded.jar'"
 alias hm="home-manager"
 alias hms="home-manager switch"
 
@@ -92,10 +92,6 @@ alias display='feh'
 #Remove flow control
 stty -ixon
 
-#fn for cd ls
-function fd () {
-    cd $1 && ls --color --group-directories-first
-}
 alias ls='ls --color --group-directories-first'
 
 # Time
@@ -129,7 +125,7 @@ alias ssh='kitty +kitten ssh'
 # use nvim
 alias vim=nvim
 # this also uses a .fdignore
-export FZF_DEFAULT_COMMAND='~/.cargo/bin/fd --type f --hidden --follow --no-ignore-vcs --exclude zig-cache'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --no-ignore-vcs --exclude zig-cache'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(direnv hook zsh)"
