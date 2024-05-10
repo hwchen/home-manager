@@ -88,6 +88,7 @@
     pkgs.ripgrep
     pkgs.shellcheck
     pkgs.simple-http-server
+    pkgs.sioyek # pdf viewer
     pkgs.starship
     pkgs.unzip
     pkgs.watchexec
