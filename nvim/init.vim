@@ -106,9 +106,10 @@ Plug 'itspriddle/vim-shellcheck'
 Plug 'EdenEast/nightfox.nvim', { 'branch': 'main' }
 
 " External
-Plug 'kassio/neoterm'
+"Plug 'kassio/neoterm'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-Plug 'voldikss/vim-floaterm'
+"Plug 'voldikss/vim-floaterm'
+Plug 'numToStr/FTerm.nvim'
 
 call plug#end()
 
@@ -317,9 +318,9 @@ vnoremap <leader>y "+y
 nnoremap <leader>Y "+y$
 
 " neoterm, terminal
-let g:neoterm_default_mod = 'botright'
+"let g:neoterm_default_mod = 'botright'
 " nnoremap <leader>t :Tnew<cr>
-nnoremap <leader>t :!kitty --detach<cr><cr>
+nnoremap <leader>T :!kitty --detach<cr><cr>
 
 " Hop (github.com/phaazon/hop)
 "nnoremap <leader>j :HopLineStart<cr>
@@ -330,6 +331,10 @@ lua << END
 
 -- for logs: tail -f /home/hwchen/.local/state/nvim/lsp.log
 -- vim.lsp.set_log_level("debug")
+
+-- FloatTerm
+vim.keymap.set('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 
 require 'hop'.setup()
 require("lsp-format").setup {
