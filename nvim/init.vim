@@ -335,6 +335,7 @@ lua << END
 -- FloatTerm
 vim.keymap.set('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('t', '<A-ESC>','<C-\\><C-n>',{noremap = true})
 
 require 'hop'.setup()
 require("lsp-format").setup {
