@@ -85,6 +85,10 @@ Plug 'ciaranm/securemodelines'
 Plug 'phaazon/hop.nvim'
 "Plug 'windwp/nvim-autopairs'
 
+" Git
+Plug 'NeogitOrg/neogit'
+Plug 'sindrets/diffview.nvim'
+
 " Language support
 Plug 'pest-parser/pest.vim'
 Plug 'rust-lang/rust.vim'
@@ -345,6 +349,10 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- Hop
 require 'hop'.setup()
+
+-- Neogit
+local neogit = require('neogit')
+neogit.setup {}
 
 -- Lsp format
 require("lsp-format").setup {
