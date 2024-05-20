@@ -77,7 +77,7 @@
     pkgs.gf # gdb frontend
     pkgs.gron
     pkgs.htop
-    pkgs.jj
+    pkgs.jujutsu
     pkgs.just
     pkgs.jq
     # pkgs.kitty broken https://github.com/NixOS/nixpkgs/issues/80936
