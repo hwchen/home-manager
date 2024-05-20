@@ -339,9 +339,14 @@ vim.keymap.set('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set('t', '<A-ESC>','<C-\\><C-n>',{noremap = true})
 
+-- Oil
 require("oil").setup()
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
+-- Hop
 require 'hop'.setup()
+
+-- Lsp format
 require("lsp-format").setup {
   rust = {
     exclude = { "rust-analyzer" }
