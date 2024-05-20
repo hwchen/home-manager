@@ -92,7 +92,6 @@ Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'keith/swift.vim'
 Plug 'ziglang/zig.vim'
 Plug 'NoahTheDuke/vim-just'
 Plug 'qnighy/lalrpop.vim',
