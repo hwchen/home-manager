@@ -4,6 +4,17 @@
     ff = only
 [core]
     editor = nvim
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    light = true
+    side-by-side = true
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
 [init]
     defaultBranch = main
 [filter "lfs"]
@@ -14,3 +25,4 @@
 [user]
     email = walther.chen@gmail.com
     name = Walther Chen
+

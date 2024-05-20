@@ -59,6 +59,7 @@
     pkgs.bat
     pkgs.curl
     pkgs.deadbeef
+    pkgs.delta
     pkgs.dive # for inspecting docker images
     pkgs.dmenu
     pkgs.emacs29
