@@ -110,6 +110,9 @@ Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 "Plug 'voldikss/vim-floaterm'
 Plug 'numToStr/FTerm.nvim'
 
+" Other
+Plug 'stevearc/oil.nvim' "edit filesystem
+
 call plug#end()
 
 "------------------------------------------------------
@@ -335,6 +338,8 @@ lua << END
 vim.keymap.set('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set('t', '<A-ESC>','<C-\\><C-n>',{noremap = true})
+
+require("oil").setup()
 
 require 'hop'.setup()
 require("lsp-format").setup {
