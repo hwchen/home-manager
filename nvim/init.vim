@@ -487,6 +487,7 @@ lspconfig.rust_analyzer.setup {
       cargo = {
         allFeatures = true,
       },
+      checkOnSave = false,
       completion = {
         postfix = {
         enable = false,
