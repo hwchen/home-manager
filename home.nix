@@ -83,7 +83,7 @@
     # pkgs.kitty broken https://github.com/NixOS/nixpkgs/issues/80936
     pkgs.nodePackages.bash-language-server
     pkgs.neovim
-    pkgs.pandoc
+    #pkgs.pandoc
     pkgs.pyright
     pkgs.redshift
     pkgs.ripgrep
