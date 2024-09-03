@@ -87,8 +87,8 @@ Plug 'phaazon/hop.nvim'
 
 " Git
 Plug 'NeogitOrg/neogit'
-Plug 'sindrets/diffview.nvim'
-Plug 'FabijanZulj/blame.nvim'
+"Plug 'sindrets/diffview.nvim'
+"Plug 'FabijanZulj/blame.nvim'
 
 " Language support
 Plug 'pest-parser/pest.vim'
@@ -335,7 +335,7 @@ nnoremap <leader>w :HopWord<cr>
 nnoremap <leader>/ :HopPattern<cr>
 
 " blame toggle
-nnoremap ggb :BlameToggle<cr>
+"nnoremap ggb :BlameToggle<cr>
 
 lua << END
 
@@ -359,7 +359,7 @@ local neogit = require('neogit')
 neogit.setup {}
 
 -- blame
-require 'blame'.setup()
+--require 'blame'.setup()
 
 -- Lsp format
 require("lsp-format").setup {
