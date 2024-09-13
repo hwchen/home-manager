@@ -93,6 +93,7 @@
     pkgs.starship
     pkgs.unzip
     pkgs.watchexec
+    pkgs.xclip
     pkgs.xcp
     pkgs.xplr
     pkgs.xsv
