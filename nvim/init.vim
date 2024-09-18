@@ -103,6 +103,7 @@ Plug 'qnighy/lalrpop.vim',
 Plug 'vmchale/dhall-vim'
 Plug 'tetralux/odin.vim'
 Plug 'itspriddle/vim-shellcheck'
+Plug 'c3lang/editor-plugins', { 'branch': 'main', 'rtp': 'vim' }
 
 " pyright installed from https://github.com/fannheyward/coc-pyright
 
