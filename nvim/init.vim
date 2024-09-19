@@ -275,6 +275,10 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " roc
 autocmd BufNewFile,BufReadPost *.roc set filetype=roc
 
+" c3
+autocmd BufNewFile,BufReadPost *.c3 set filetype=c3
+autocmd BufNewFile,BufReadPost *.c3 :setlocal noexpandtab
+
 " tabs for odin dev only
 " ** glob not working for some reason? Or is there some weird buffering going
 " on? since json files in these repos are using tabs
