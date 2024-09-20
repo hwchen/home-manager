@@ -77,6 +77,7 @@
     pkgs.gf # gdb frontend
     pkgs.gron
     pkgs.htop
+    pkgs.hyperfine # profiling
     pkgs.jujutsu
     pkgs.just
     pkgs.jq
@@ -84,6 +85,7 @@
     pkgs.nodePackages.bash-language-server
     pkgs.neovim
     #pkgs.pandoc
+    pkgs.poop # profiling
     pkgs.pyright
     pkgs.redshift
     pkgs.ripgrep
