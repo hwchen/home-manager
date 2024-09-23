@@ -544,6 +544,11 @@ require'lspconfig'.dhall_lsp_server.setup{
     capabilities = capabilities
 }
 
+require'lspconfig'.c3_lsp.setup{
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     virtual_text = false,
