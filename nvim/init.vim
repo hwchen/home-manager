@@ -282,8 +282,8 @@ autocmd BufNewFile,BufReadPost *.c3 :setlocal noexpandtab
 " tabs for odin dev only
 " ** glob not working for some reason? Or is there some weird buffering going
 " on? since json files in these repos are using tabs
-autocmd BufNewFile,BufReadPost ~/odindev/odin/*.odin :setlocal noexpandtab
-autocmd BufNewFile,BufReadPost ~/odindev/ols/*.odin :setlocal noexpandtab
+autocmd BufNewFile,BufReadPost *.odin :set filetype=odin
+autocmd BufNewFile,BufReadPost *.odin :setlocal noexpandtab
 
 " trailing whitespace
 
