@@ -60,7 +60,7 @@
     pkgs.deadbeef
     pkgs.delta
     pkgs.dmenu
-    pkgs.emacs29
+    #pkgs.emacs29
     pkgs.eva
     pkgs.evince
     pkgs.eza
@@ -75,7 +75,7 @@
     pkgs.gf # gdb frontend
     pkgs.htop
     pkgs.hyperfine # profiling
-    pkgs.jujutsu
+    #pkgs.jujutsu
     pkgs.just
     pkgs.jq
     # pkgs.kitty broken https://github.com/NixOS/nixpkgs/issues/80936
@@ -87,7 +87,7 @@
     pkgs.redshift
     pkgs.ripgrep
     pkgs.shellcheck
-    pkgs.simple-http-server
+    #pkgs.simple-http-server
     pkgs.sioyek # pdf viewer
     pkgs.starship
     pkgs.unzip
