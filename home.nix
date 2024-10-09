@@ -99,8 +99,6 @@
     pkgs.yt-dlp # youtube download
     pkgs.zsh-nix-shell # needed?
     pkgs.zip
-    pkgs.zulip
-    pkgs.zulip-term
   ];
 
   programs = {
