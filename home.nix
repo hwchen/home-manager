@@ -55,12 +55,10 @@
     # spotify? (non-free)
     # vim plugins?
     pkgs.aerc
-    pkgs.asciinema
     pkgs.bat
     pkgs.curl
     pkgs.deadbeef
     pkgs.delta
-    pkgs.dive # for inspecting docker images
     pkgs.dmenu
     pkgs.emacs29
     pkgs.eva
@@ -75,7 +73,6 @@
     pkgs.git-lfs
     pkgs.gitui
     pkgs.gf # gdb frontend
-    pkgs.gron
     pkgs.htop
     pkgs.hyperfine # profiling
     pkgs.jujutsu
@@ -104,9 +101,6 @@
     pkgs.zip
     pkgs.zulip
     pkgs.zulip-term
-
-    # work
-    pkgs.teleport
   ];
 
   programs = {
