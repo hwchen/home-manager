@@ -77,6 +77,7 @@ alias find='fd'
 alias liz="cd ~/src/lizzie && java -jar 'target/lizzie-0.6-shaded.jar'"
 alias hm="home-manager"
 alias hms="home-manager switch"
+alias xclip="xclip -selection clipboard"
 
 #Volume
 
