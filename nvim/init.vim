@@ -282,6 +282,9 @@ autocmd BufNewFile,BufReadPost *.roc set filetype=roc
 " c3
 autocmd BufNewFile,BufReadPost *.c3 set filetype=c3
 autocmd BufNewFile,BufReadPost *.c3 :setlocal noexpandtab
+" set errorformat here so I can use `just` for make:
+autocmd FileType c3 setlocal errorformat=(%f:%l:%c)\ %m
+
 
 " tabs for odin dev only
 " ** glob not working for some reason? Or is there some weird buffering going
