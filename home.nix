@@ -59,6 +59,7 @@
     pkgs.curl
     pkgs.deadbeef
     pkgs.delta
+    pkgs.dhall-lsp-server
     pkgs.dmenu
     #pkgs.emacs29
     pkgs.eva
