@@ -145,7 +145,8 @@ rgz() { rg --pre rg-pigz --pre-glob '*.gz' "$@"; }
 if [ -e /home/hwchen/.nix-profile/etc/profile.d/nix.sh ]; then . /home/hwchen/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # redshift
-alias redshift-loc='redshift -l 42:-71'
+#alias redshift-loc='redshift -l 42:-71'
+alias redshift-loc='redshift -l 10:106'
 
 # keychain
 keychain id_rsa
