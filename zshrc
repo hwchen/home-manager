@@ -34,6 +34,9 @@ setopt HIST_IGNORE_SPACE     # Do not record an event starting with a space.
 autoload -Uz compinit
 compinit
 
+# autocomplete jj
+source <(jj util completion zsh)
+
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
