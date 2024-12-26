@@ -121,7 +121,8 @@ export PATH="$HOME/bin/edirect:$PATH"
 
 # kitty ssh
 # might be a bit dangerous, it's not a drop in for ssh
-alias ssh='kitty +kitten ssh'
+# switched from kitty to ghostty
+#alias ssh='kitty +kitten ssh'
 
 # use nvim
 alias vim=nvim
