@@ -65,9 +65,19 @@ export PATH=$HOME/.config/emacs/bin:$PATH
 alias emacs='emacs -nw'
 
 # for laptop brightness
-function brightness () {
-    echo $1 | sudo tee /sys/class/backlight/intel_backlight/brightness
-}
+# https://unix.stackexchange.com/questions/301724/xbacklight-not-working
+# Set /sys/X11/xorg.conf
+# Section "Device"
+#     Identifier  "0x72"
+#     Driver      "intel"
+#     Option      "Backlight"  "intel_backlight"
+# EndSection
+# Find identifier through xrandr --verbose
+# Then set the rest in i3 config for hotkeys
+#
+#function brightness () {
+#    echo $1 | sudo tee /sys/class/backlight/intel_backlight/brightness
+#}
 
 #Aliases
 alias cat='bat -pp'

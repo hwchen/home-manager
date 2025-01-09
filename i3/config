@@ -50,8 +50,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #Brightness
 
-bindcode 122 exec xbacklight -dec 1  # currently on the vol up and down
-bindcode 123 exec xbacklight -inc 1
+bindcode 233 exec xbacklight -inc 1
+bindcode 232 exec xbacklight -dec 1
 
 
 # change focus
