@@ -100,6 +100,15 @@
     pkgs.yt-dlp # youtube download
     pkgs.zsh-nix-shell # needed?
     pkgs.zip
+
+    # for wayland
+    pkgs.fuzzel # dmenu
+    pkgs.waybar # polybar
+    pkgs.gammastep # redshift
+    pkgs.brightnessctl # xbacklight
+    pkgs.wl-clipboard # xclip
+    pkgs.grim # screenshots
+    pkgs.slurp # regions selection (for screenshots)
   ];
 
   programs = {
