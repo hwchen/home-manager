@@ -74,6 +74,7 @@
     pkgs.git-lfs
     pkgs.gitui
     pkgs.gf # gdb frontend
+    pkgs.graphviz
     pkgs.htop
     pkgs.hyperfine # profiling
     #pkgs.jujutsu
@@ -85,6 +86,7 @@
     #pkgs.pandoc
     pkgs.poop # profiling
     pkgs.pyright
+    pkgs.python313Packages.turnt
     pkgs.redshift
     pkgs.ripgrep
     pkgs.shellcheck
