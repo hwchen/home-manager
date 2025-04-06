@@ -112,6 +112,10 @@
     pkgs.grim # screenshots
     pkgs.slurp # regions selection (for screenshots)
     pkgs.swayimg
+
+    # for vim
+    # use with https://github.com/dan-t/rusty-tags
+    pkgs.universal-ctags
   ];
 
   programs = {

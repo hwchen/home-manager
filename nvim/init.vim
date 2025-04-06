@@ -294,6 +294,14 @@ autocmd FileType c3 setlocal errorformat=(%f:%l:%c)\ %m
 autocmd BufNewFile,BufReadPost *.odin :set filetype=odin
 autocmd BufNewFile,BufReadPost *.odin :setlocal noexpandtab
 
+" Rust
+autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
+
+" ctags in general
+" go definition
+" If lsp, it will remap gd again
+nnoremap gd <C-]>
+
 " trailing whitespace
 
 set list listchars=tab:»·,trail:·
@@ -498,34 +506,35 @@ local on_attach = function(client, bufnr)
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-lspconfig.rust_analyzer.setup {
-  on_attach = on_attach,
-  flags = {
-    debounce_text_changes = 150,
-  },
-  settings = {
-    ["rust-analyzer"] = {
-      cargo = {
-        allFeatures = true,
-      },
-      checkOnSave = false,
-      completion = {
-        postfix = {
-        enable = false,
-        },
-      },
-      workspace = {
-        symbol = {
-          search = {
-            kind = "all_symbols",
-            limit = 4096,
-          },
-        },
-      },
-    },
-  },
-  capabilities = capabilities,
-}
+
+--lspconfig.rust_analyzer.setup {
+--  on_attach = on_attach,
+--  flags = {
+--    debounce_text_changes = 150,
+--  },
+--  settings = {
+--    ["rust-analyzer"] = {
+--      cargo = {
+--        allFeatures = true,
+--      },
+--      checkOnSave = false,
+--      completion = {
+--        postfix = {
+--        enable = false,
+--        },
+--      },
+--      workspace = {
+--        symbol = {
+--          search = {
+--            kind = "all_symbols",
+--            limit = 4096,
+--          },
+--        },
+--      },
+--    },
+--  },
+--  capabilities = capabilities,
+--}
 
 lspconfig.zls.setup{
   on_attach = on_attach,
