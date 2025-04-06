@@ -60,7 +60,6 @@
     pkgs.deadbeef
     pkgs.delta
     pkgs.dhall-lsp-server
-    pkgs.dmenu
     #pkgs.emacs29
     pkgs.eva
     pkgs.evince
@@ -80,14 +79,12 @@
     #pkgs.jujutsu
     pkgs.just
     pkgs.jq
-    # pkgs.kitty broken https://github.com/NixOS/nixpkgs/issues/80936
     pkgs.nodePackages.bash-language-server
     pkgs.neovim
     #pkgs.pandoc
     pkgs.poop # profiling
     pkgs.pyright
     pkgs.python313Packages.turnt
-    pkgs.redshift
     pkgs.ripgrep
     pkgs.shellcheck
     #pkgs.simple-http-server
@@ -97,7 +94,6 @@
     pkgs.watchexec
     pkgs.xclip
     pkgs.xcp
-    pkgs.xplr
     pkgs.xsv
     pkgs.yt-dlp # youtube download
     pkgs.zsh-nix-shell # needed?
@@ -133,14 +129,6 @@
     };
 
     zsh.enable = true; # manage shell here
-  };
-
-  services.polybar = {
-    enable = true;
-    package = pkgs.polybar.override {
-      i3Support = true;
-    };
-    script = ""; # use script load.sh instead for now
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
