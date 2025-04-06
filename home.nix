@@ -111,6 +111,7 @@
     pkgs.wl-clipboard # xclip
     pkgs.grim # screenshots
     pkgs.slurp # regions selection (for screenshots)
+    pkgs.swayimg
   ];
 
   programs = {
