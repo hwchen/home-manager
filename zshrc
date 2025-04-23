@@ -186,3 +186,4 @@ alias incus-ls="incus list"
 # for when not using kb
 alias kbcaps='setxkbmap -option "caps:escape"'
 alias ungron='gron -u'
+alias clear-tmp='sudo find /tmp -type f -atime +10 -delete'
