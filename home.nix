@@ -57,17 +57,17 @@
     pkgs.aerc
     pkgs.bat
     pkgs.curl
-    pkgs.deadbeef
+    #pkgs.deadbeef
     pkgs.delta
     pkgs.dhall-lsp-server
     #pkgs.emacs29
     pkgs.eva
     pkgs.evince
-    pkgs.eza
+    #pkgs.eza
     pkgs.fd
     pkgs.feh # image viewer
     # pkgs.firefox broken openfl
-    pkgs.flameshot # screenshots
+    #pkgs.flameshot # screenshots
     pkgs.fzf
     pkgs.git
     pkgs.git-lfs
@@ -76,7 +76,7 @@
     pkgs.graphviz
     pkgs.htop
     pkgs.hyperfine # profiling
-    #pkgs.jujutsu
+    #pkgs.jujutsu # build manually
     pkgs.just
     pkgs.jq
     pkgs.nodePackages.bash-language-server
@@ -88,7 +88,7 @@
     pkgs.ripgrep
     pkgs.shellcheck
     #pkgs.simple-http-server
-    pkgs.sioyek # pdf viewer
+    #pkgs.sioyek # pdf viewer
     pkgs.starship
     pkgs.unzip
     pkgs.watchexec
