@@ -80,7 +80,8 @@
     pkgs.just
     pkgs.jq
     pkgs.nodePackages.bash-language-server
-    pkgs.neovim
+    pkgs.nodejs_22 # for nvim-treesitter?
+    #pkgs.neovim # just download manually
     #pkgs.pandoc
     pkgs.poop # profiling
     pkgs.pyright

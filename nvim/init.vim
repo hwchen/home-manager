@@ -70,9 +70,9 @@ Plug '/home/hwchen/src/fzf/'
 Plug 'junegunn/fzf.vim'
 " Fuzzy finder for symbols/outline only (for now)
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
+Plug 'nvim-telescope/telescope.nvim', { 'branch': 'master' }
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'branch': 'main', 'do': 'make' }
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': 'main'}
 
 " Editor
 Plug 'airblade/vim-rooter'
@@ -101,9 +101,7 @@ Plug 'ziglang/zig.vim'
 Plug 'NoahTheDuke/vim-just'
 Plug 'qnighy/lalrpop.vim',
 Plug 'vmchale/dhall-vim'
-Plug 'tetralux/odin.vim'
 Plug 'itspriddle/vim-shellcheck'
-Plug 'c3lang/editor-plugins', { 'branch': 'main', 'rtp': 'vim' }
 
 " pyright installed from https://github.com/fannheyward/coc-pyright
 
@@ -570,24 +568,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   }
 )
 
--- Roc
--- manual lsp startup, example at https://dx13.co.uk/articles/2023/04/24/neovim-lsp-without-plugins/
---local autocmd = vim.api.nvim_create_autocmd
---autocmd("FileType", {
---    pattern = "roc",
---    callback = function()
---        local root_dir = vim.fs.dirname(
---            vim.fs.find({ 'main.roc', '.git' }, { upward = true })[1]
---        )
---        local client = vim.lsp.start({
---            name = 'roc_ls',
---            cmd = { 'roc_ls' },
---            root_dir = root_dir,
---        })
---        vim.lsp.buf_attach_client(0, client)
---    end
---})
-
 -- Telescope
 
 local actions = require("telescope.actions")
@@ -608,34 +588,19 @@ require('telescope').load_extension('fzf')
 
 -- treesitter
 
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
-  },
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
--- treesitter for roc
--- note that I also had to link the query files from ~/src/tree-sitter-roc/queries to ~/.config/nvim/queries/roc
-local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-parser_config.roc = {
-  install_info = {
-    url = "~/src/tree-sitter-roc", -- local path or git repo
-    files = {"src/parser.c", "src/scanner.cc"}, -- note that some parsers also require src/scanner.c or src/scanner.cc
-    -- optional entries:
-    branch = "main", -- default branch in case of git repo if different from master
-    generate_requires_npm = false, -- if stand-alone parser without npm dependencies
-    requires_generate_from_grammar = false, -- if folder contains pre-generated src/parser.c
-  },
-  filetype = "roc", -- if filetype does not match the parser name
-}
-vim.treesitter.language.register('roc', 'roc')
+local treesitter_langs = { 'c3', 'typst', 'rust', 'odin' }
+require'nvim-treesitter'.install(treesitter_langs)
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = treesitter_langs,
+    callback = function()
+        -- syntax highlighting, provided by Neovim
+        vim.treesitter.start()
+        -- folds, provided by Neovim
+        --vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+        ---- indentation, provided by nvim-treesitter
+        --vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    end,
+})
 
 --require("nvim-autopairs").setup {}
 --
