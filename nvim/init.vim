@@ -9,10 +9,6 @@ set undodir=~/.vimdid
 set undofile
 
 set nocompatible
-"set nobackup
-"set nowritebackup
-"set noswapfile
-"set history=50
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -20,10 +16,6 @@ set updatetime=500
 set completeopt=menuone,noinsert,noselect
 
 set ruler
-"set relativenumber
-set number
-set signcolumn=yes
-
 set showcmd
 
 set incsearch
@@ -83,15 +75,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ciaranm/securemodelines'
 Plug 'phaazon/hop.nvim'
-"Plug 'windwp/nvim-autopairs'
-
-" Git
-Plug 'NeogitOrg/neogit'
-"Plug 'sindrets/diffview.nvim'
-"Plug 'FabijanZulj/blame.nvim'
 
 " Language support
-Plug 'pest-parser/pest.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
@@ -99,19 +84,13 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'ziglang/zig.vim'
 Plug 'NoahTheDuke/vim-just'
-Plug 'qnighy/lalrpop.vim',
 Plug 'vmchale/dhall-vim'
 Plug 'itspriddle/vim-shellcheck'
-
-" pyright installed from https://github.com/fannheyward/coc-pyright
 
 " Theme
 Plug 'EdenEast/nightfox.nvim', { 'branch': 'main' }
 
 " External
-"Plug 'kassio/neoterm'
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-"Plug 'voldikss/vim-floaterm'
 Plug 'numToStr/FTerm.nvim'
 
 " Other
@@ -150,17 +129,13 @@ let g:rooter_patterns = ['.git']
 
 "------------------------------------------------------
 "Files/Search
-"Note, uses custom FZF_DEFAULT_COMMAND, fd, .fdignore to ignore correct files
-"nnoremap <leader>o :Files<CR>
-"nnoremap <leader>; :Buffers<CR>
-"nnoremap <leader>g :Rg 
+
 "toggles between buffers
 nnoremap <space><space> <c-^>
-let g:fzf_layout = { 'down' : '40%' }
 
 "Search symbols using telescope/lsp
-nnoremap <leader>l :Telescope lsp_document_symbols<CR>
-nnoremap <leader>s :Telescope lsp_workspace_symbols<CR>
+nnoremap <leader>l :Telescope quickfix<CR>
+nnoremap <leader>e :Telescope diagnostics<CR>
 
 nnoremap <leader>o <cmd>Telescope find_files<cr>
 nnoremap <leader>g <cmd>Telescope live_grep<cr>
@@ -188,9 +163,6 @@ let g:lightline = {
     \ },
 \ }
 
-  " Use auocmd to force lightline update.
-  autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
-
 "------------------------------------------------------
 "Markdown
 let g:vim_markdown_folding_disabled = 1
@@ -210,17 +182,6 @@ inoremap <right> <nop>
 
 inoremap jk <esc>
 
-" use fzf now
-"inoremap <leader>o <esc>:tabe 
-"noremap <leader>o <esc>:tabe 
-
-" no more tabs
-"inoremap <leader>, <esc>:tabp<cr>
-"noremap <leader>, <esc>:tabp<cr>
-
-"inoremap <leader>. <esc>:tabn<cr>
-"noremap <leader>. <esc>:tabn<cr>
-
 inoremap <c-s> <esc>:w<cr>
 noremap <c-s> <esc>:w<cr>
 
@@ -231,10 +192,6 @@ highlight TabLineSel ctermbg=Black ctermfg=Gray
 highlight TabLine ctermbg=Black ctermfg=DarkBlue
 
 "splits
-
-" use fzf now
-"inoremap <c-o> <esc>:vsp 
-"noremap <c-o> <esc>:vsp 
 
 nnoremap <c-j> <c-w><c-j>
 nnoremap <c-k> <c-w><c-k>
@@ -286,9 +243,7 @@ autocmd BufNewFile,BufReadPost *.c3 :setlocal noexpandtab
 autocmd FileType c3 setlocal errorformat=(%f:%l:%c)\ %m
 
 
-" tabs for odin dev only
-" ** glob not working for some reason? Or is there some weird buffering going
-" on? since json files in these repos are using tabs
+" odin
 autocmd BufNewFile,BufReadPost *.odin :set filetype=odin
 autocmd BufNewFile,BufReadPost *.odin :setlocal noexpandtab
 
@@ -354,9 +309,6 @@ nnoremap <leader>T :!kitty --detach<cr><cr>
 nnoremap <leader>w :HopWord<cr>
 nnoremap <leader>/ :HopPattern<cr>
 
-" blame toggle
-"nnoremap ggb :BlameToggle<cr>
-
 lua << END
 
 -- for logs: tail -f /home/hwchen/.local/state/nvim/lsp.log
@@ -373,13 +325,6 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- Hop
 require 'hop'.setup()
-
--- Neogit
-local neogit = require('neogit')
-neogit.setup {}
-
--- blame
---require 'blame'.setup()
 
 -- Lsp format
 require("lsp-format").setup {
@@ -601,16 +546,6 @@ vim.api.nvim_create_autocmd('FileType', {
         --vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
     end,
 })
-
---require("nvim-autopairs").setup {}
---
----- If you want insert `(` after select function or method item
---local cmp_autopairs = require('nvim-autopairs.completion.cmp')
---local cmp = require('cmp')
---cmp.event:on(
---  'confirm_done',
---  cmp_autopairs.on_confirm_done()
---)
 
 END
 
