@@ -297,10 +297,15 @@ nnoremap <leader>/ :HopPattern<cr>
 
 lua << END
 
--- for logs: tail -f /home/hwchen/.local/state/nvim/lsp.log
--- vim.lsp.set_log_level("debug")
-
 -- FloatTerm
+require'FTerm'.setup({
+    dimensions  = {
+        height = 1.0,
+        width = 1.0,
+        x = 0.5,
+        y = 0.5,
+    },
+})
 vim.keymap.set('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set('t', '<A-ESC>','<C-\\><C-n>',{noremap = true})
