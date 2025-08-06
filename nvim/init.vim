@@ -137,17 +137,20 @@ nnoremap gl: <cmd>cp<cr>
 "------------------------------------------------------
 "Statusline
 
+" turn off status line
+set laststatus=0
+
 "hi clear StatusLine
 "hi StatusLine ctermbg=black ctermfg=gray
-set laststatus=2
-set noshowmode
-let g:lightline = {
-    \ 'colorscheme': 'dayfox',
-    \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ]
-    \ },
-\ }
+"set laststatus=2
+"set noshowmode
+"let g:lightline = {
+"    \ 'colorscheme': 'dayfox',
+"    \ 'active': {
+"    \   'left': [ [ 'mode', 'paste' ],
+"    \             [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ]
+"    \ },
+"\ }
 
 "------------------------------------------------------
 "Markdown
