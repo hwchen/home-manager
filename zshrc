@@ -95,8 +95,8 @@ alias xclip="xclip -selection clipboard"
 #Volume
 
 alias vmute='amixer -D pulse sset Master 0%'
-alias vu='amixer -D pulse sset Master 5%+'
-alias vd='amixer -D pulse sset Master 5%-'
+#alias vu='amixer -D pulse sset Master 5%+'
+#alias vd='amixer -D pulse sset Master 5%-'
 alias vh='amixer -D pulse sset Master 25%'
 alias vmax='amixer -D pulse sset Master 100%'
 
