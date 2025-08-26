@@ -50,6 +50,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'branch': 'master' }
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'branch': 'main', 'do': 'make' }
+
+" consider removing this plugin because of https://github.com/nvim-treesitter/nvim-treesitter/issues/7872
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': 'main'}
 
 " Editor
@@ -83,6 +85,7 @@ Plug 'numToStr/FTerm.nvim'
 Plug 'stevearc/oil.nvim' "edit filesystem
 
 call plug#end()
+
 
 "------------------------------------------------------
 " Color Scheme and terminal support
@@ -120,30 +123,30 @@ let g:rooter_patterns = ['.git']
 nnoremap <space><space> <c-^>
 
 "Search symbols using telescope/lsp
-nnoremap <leader>l :Telescope quickfix<CR>
-nnoremap <leader>e :Telescope diagnostics<CR>
+"nnoremap <leader>l :Telescope quickfix<CR>
+"nnoremap <leader>e :Telescope diagnostics<CR>
 
 nnoremap <leader>o <cmd>Telescope find_files<cr>
-nnoremap <leader>g <cmd>Telescope live_grep<cr>
+"nnoremap <leader>g <cmd>Telescope live_grep<cr>
 " replaced with buffers picker
 "nnoremap <leader>; <cmd>Telescope buffers<cr>
 noremap <leader>; <cmd>lua require('telescope.builtin').buffers({sort_mru=true, ignore_current_buffer=true})<cr>
 
 "------------------------------------------------------
 "Quickfix
-nnoremap gl; <cmd>cn<cr>
-nnoremap gl: <cmd>cp<cr>
+nnoremap g; <cmd>cn<cr>
+nnoremap g: <cmd>cp<cr>
 
 "------------------------------------------------------
 "Statusline
 
 " turn off status line
 set laststatus=0
+set noshowmode
 
 "hi clear StatusLine
 "hi StatusLine ctermbg=black ctermfg=gray
 "set laststatus=2
-"set noshowmode
 "let g:lightline = {
 "    \ 'colorscheme': 'dayfox',
 "    \ 'active': {
@@ -290,8 +293,8 @@ nnoremap <leader>Y "+y$
 
 " neoterm, terminal
 "let g:neoterm_default_mod = 'botright'
-" nnoremap <leader>t :Tnew<cr>
-nnoremap <leader>T :!kitty --detach<cr><cr>
+"nnoremap <leader>t :Tnew<cr>
+nnoremap <leader>t :!ghostty<cr>
 
 " Hop (github.com/phaazon/hop)
 "nnoremap <leader>j :HopLineStart<cr>
@@ -299,6 +302,19 @@ nnoremap <leader>w :HopWord<cr>
 nnoremap <leader>/ :HopPattern<cr>
 
 lua << END
+
+-- Scratch buffer w/ command
+vim.keymap.set("n", "<space>c", function()
+  vim.ui.input({}, function(c) 
+      if c and c~="" then 
+        vim.cmd("noswapfile vnew") 
+        vim.bo.buftype = "nofile"
+        vim.bo.bufhidden = "wipe"
+        vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.fn.systemlist(c))
+      end 
+  end) 
+end)
+
 
 -- FloatTerm
 require'FTerm'.setup({
@@ -373,3 +389,7 @@ augroup quickfix
 	autocmd QuickFixCmdPost cgetexpr cwindow
 	autocmd QuickFixCmdPost lgetexpr lwindow
 augroup END
+
+nnoremap <leader>g :Grep 
+
+" TODO toggle quickfix, set :compiler
