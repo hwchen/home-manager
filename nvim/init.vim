@@ -1,6 +1,9 @@
 scriptencoding utf-8
 set encoding=utf-8
 
+" flickering on startup https://github.com/neovim/neovim/issues/19362
+set background=light
+
 nmap <space> <leader>
 vmap <space> <leader>
 
@@ -77,6 +80,9 @@ Plug 'itspriddle/vim-shellcheck'
 
 " Theme
 Plug 'EdenEast/nightfox.nvim', { 'branch': 'main' }
+Plug 'p00f/alabaster.nvim'
+" alabaster theme queries are kept in .config/nvim/queries/c3/highlights.scm
+" They will override the default nvim-treesitter queries https://github.com/nvim-treesitter/nvim-treesitter/issues/3146
 
 " External
 Plug 'numToStr/FTerm.nvim'
@@ -100,8 +106,9 @@ highlight clear SignColumn
 let &t_ut=''
 
 set termguicolors
-colo dayfox
-
+"colo dayfox
+colo alabaster
+let g:alabaster_floatborder = 1
 
 "indent line disabled by default
 let g:indentLine_enabled = 0
@@ -249,7 +256,7 @@ nnoremap gd <C-]>
 
 " trailing whitespace
 
-set list listchars=tab:»·,trail:·
+"set list listchars=tab:\|\ ,trail:·
 
 " two space tabs for js
 autocmd FileType javascript :setlocal sw=2 ts=2 noexpandtab autoindent"sts=2
@@ -358,8 +365,9 @@ require('telescope').load_extension('fzf')
 
 local treesitter_langs = { 'c3', 'typst', 'rust', 'odin' }
 require'nvim-treesitter'.install(treesitter_langs)
+-- highlighting handled by alabaster
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = treesitter_langs,
+    pattern = {'c3', 'typst', 'rust', 'odin' },
     callback = function()
         -- syntax highlighting, provided by Neovim
         vim.treesitter.start()
@@ -373,6 +381,10 @@ vim.api.nvim_create_autocmd('FileType', {
 END
 
 " Grep and quickfix
+if executable('rg')
+      set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case        
+      set grepformat=%f:%l:%c:%m
+endif
 
 function! Grep(...)
 	return system(join([&grepprg] + [expandcmd(join(a:000, ' '))], ' '))

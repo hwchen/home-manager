@@ -96,7 +96,7 @@
     pkgs.xclip
     pkgs.xcp
     pkgs.xsv
-    pkgs.yt-dlp # youtube download
+    #pkgs.yt-dlp # youtube download
     pkgs.zsh-nix-shell # needed?
     pkgs.zip
 
